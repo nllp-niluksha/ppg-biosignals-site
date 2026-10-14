@@ -243,15 +243,16 @@ export default function Home() {
                 hand holding device, soft clinical light, product photography, 4K"
               */}
               {[
-                { file: "screen-1.png", label: "Live PPG recording", tall: false },
-                { file: "screen-2.png", label: "Results — HR, RR, SpO₂, HRV", tall: true },
-                { file: "screen-3.png", label: "Patient profiles", tall: false },
+                { file: "screen-1.png", label: "Patient profiles", tall: false },
+                { file: "screen-2.png", label: "Live PPG recording", tall: true },
+                { file: "screen-3.png", label: "Results — HR, RR, SpO₂, HRV", tall: false },
               ].map((s) => (
                 <div key={s.file} className={`phone-frame${s.tall ? " phone-frame--tall" : ""}`}>
-                  <div className="phone-screen--placeholder">
-                    {/* Replace with: <img src={`/media/${s.file}`} … /> */}
-                    <span>{s.label}<br /><br />Drop screenshot here:<br />/public/media/{s.file}</span>
-                  </div>
+                  <img
+                    src={`/media/${s.file}`}
+                    alt={s.label}
+                    className="phone-screen"
+                  />
                 </div>
               ))}
             </div>
